@@ -7,7 +7,7 @@ import CertificateForm from './components/CertificateForm';
 import WorkExperienceForm from './components/WorkExperienceForm';
 import SkillsForm from './components/SkillsForm';
 import CVPreview from './components/CVPreview';
-import { CVData, PersonalData, Education, Certificate, WorkExperience, Skills } from './types';
+import { CVData, PersonalData, Education, Certificate, WorkExperience, Skills } from './type';
 
 const initialPersonalData: PersonalData = {
   fullName: '',
@@ -53,7 +53,7 @@ export default function Home() {
   ];
 
   // Map step number to data and setter
-  const stepDataMap: Record<number, { data: unknown; onChange: (data: unknown) => void }> = {
+  const stepDataMap: Record<number, { data: PersonalData | Education[] | Certificate[] | WorkExperience[] | Skills; onChange: ((data: PersonalData) => void) | ((data: Education[]) => void) | ((data: Certificate[]) => void) | ((data: WorkExperience[]) => void) | ((data: Skills) => void) }> = {
     1: { data: personalData, onChange: setPersonalData },
     2: { data: education, onChange: setEducation },
     3: { data: certificates, onChange: setCertificates },
@@ -149,8 +149,8 @@ export default function Home() {
 
           {CurrentStepComponent && currentStepData && (
             <CurrentStepComponent
-              data={currentStepData.data}
-              onChange={currentStepData.onChange}
+              data={currentStepData.data as any}
+              onChange={currentStepData.onChange as any}
             />
           )}
 
