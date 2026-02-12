@@ -84,7 +84,7 @@ export default function SkillsForm({ data, onChange }: SkillsFormProps) {
             value={newTechnicalSkill}
             onChange={(e) => setNewTechnicalSkill(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && addTechnicalSkill()}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             placeholder="Ketik keterampilan teknis dan tekan Enter"
           />
           <button
@@ -135,7 +135,7 @@ export default function SkillsForm({ data, onChange }: SkillsFormProps) {
             value={newSoftSkill}
             onChange={(e) => setNewSoftSkill(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && addSoftSkill()}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             placeholder="Ketik soft skill dan tekan Enter"
           />
           <button
@@ -184,13 +184,13 @@ export default function SkillsForm({ data, onChange }: SkillsFormProps) {
             type="text"
             value={newLanguage.language}
             onChange={(e) => setNewLanguage({ ...newLanguage, language: e.target.value })}
-            className="md:col-span-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="md:col-span-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             placeholder="Nama bahasa"
           />
           <select
             value={newLanguage.proficiency}
             onChange={(e) => setNewLanguage({ ...newLanguage, proficiency: e.target.value })}
-            className="md:col-span-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="md:col-span-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
           >
             <option value="">Pilih tingkat kemahiran</option>
             <option value="Native">Native/Penutur Asli</option>

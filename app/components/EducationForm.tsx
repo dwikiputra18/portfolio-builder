@@ -123,7 +123,7 @@ export default function EducationForm({ data, onChange }: EducationFormProps) {
               type="text"
               value={currentEducation.institution}
               onChange={(e) => setCurrentEducation({ ...currentEducation, institution: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Universitas Indonesia"
             />
           </div>
@@ -135,7 +135,7 @@ export default function EducationForm({ data, onChange }: EducationFormProps) {
             <select
               value={currentEducation.degree}
               onChange={(e) => setCurrentEducation({ ...currentEducation, degree: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             >
               <option value="">Pilih Tingkat</option>
               <option value="SMA/SMK">SMA/SMK</option>
@@ -154,7 +154,7 @@ export default function EducationForm({ data, onChange }: EducationFormProps) {
               type="text"
               value={currentEducation.fieldOfStudy}
               onChange={(e) => setCurrentEducation({ ...currentEducation, fieldOfStudy: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Teknik Informatika"
             />
           </div>
@@ -167,7 +167,7 @@ export default function EducationForm({ data, onChange }: EducationFormProps) {
               type="month"
               value={currentEducation.startDate}
               onChange={(e) => setCurrentEducation({ ...currentEducation, startDate: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             />
           </div>
 
@@ -179,7 +179,7 @@ export default function EducationForm({ data, onChange }: EducationFormProps) {
               type="month"
               value={currentEducation.endDate}
               onChange={(e) => setCurrentEducation({ ...currentEducation, endDate: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             />
           </div>
 
@@ -191,7 +191,7 @@ export default function EducationForm({ data, onChange }: EducationFormProps) {
               type="text"
               value={currentEducation.gpa || ''}
               onChange={(e) => setCurrentEducation({ ...currentEducation, gpa: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="3.75"
             />
           </div>
@@ -204,7 +204,7 @@ export default function EducationForm({ data, onChange }: EducationFormProps) {
               value={currentEducation.description || ''}
               onChange={(e) => setCurrentEducation({ ...currentEducation, description: e.target.value })}
               rows={3}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Contoh: Lulus dengan predikat Cum Laude, Aktif di organisasi kemahasiswaan"
             />
           </div>

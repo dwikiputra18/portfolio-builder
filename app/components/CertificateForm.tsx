@@ -131,7 +131,7 @@ export default function CertificateForm({ data, onChange }: CertificateFormProps
               type="text"
               value={currentCertificate.name}
               onChange={(e) => setCurrentCertificate({ ...currentCertificate, name: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Contoh: AWS Certified Solutions Architect"
             />
           </div>
@@ -144,7 +144,7 @@ export default function CertificateForm({ data, onChange }: CertificateFormProps
               type="text"
               value={currentCertificate.issuer}
               onChange={(e) => setCurrentCertificate({ ...currentCertificate, issuer: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Contoh: Amazon Web Services"
             />
           </div>
@@ -157,7 +157,7 @@ export default function CertificateForm({ data, onChange }: CertificateFormProps
               type="month"
               value={currentCertificate.issueDate}
               onChange={(e) => setCurrentCertificate({ ...currentCertificate, issueDate: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             />
           </div>
 
@@ -169,7 +169,7 @@ export default function CertificateForm({ data, onChange }: CertificateFormProps
               type="month"
               value={currentCertificate.expiryDate || ''}
               onChange={(e) => setCurrentCertificate({ ...currentCertificate, expiryDate: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             />
             <p className="text-xs text-gray-500 mt-1">Kosongkan jika tidak ada masa berlaku</p>
           </div>
@@ -182,7 +182,7 @@ export default function CertificateForm({ data, onChange }: CertificateFormProps
               type="text"
               value={currentCertificate.credentialId || ''}
               onChange={(e) => setCurrentCertificate({ ...currentCertificate, credentialId: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Contoh: ABC123XYZ"
             />
           </div>
@@ -195,7 +195,7 @@ export default function CertificateForm({ data, onChange }: CertificateFormProps
               type="url"
               value={currentCertificate.credentialUrl || ''}
               onChange={(e) => setCurrentCertificate({ ...currentCertificate, credentialUrl: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="https://credential-url.com/verify"
             />
           </div>

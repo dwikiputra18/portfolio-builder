@@ -163,7 +163,7 @@ export default function WorkExperienceForm({ data, onChange }: WorkExperienceFor
               type="text"
               value={currentWork.company}
               onChange={(e) => setCurrentWork({ ...currentWork, company: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="PT. Teknologi Indonesia"
             />
           </div>
@@ -176,7 +176,7 @@ export default function WorkExperienceForm({ data, onChange }: WorkExperienceFor
               type="text"
               value={currentWork.position}
               onChange={(e) => setCurrentWork({ ...currentWork, position: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Software Engineer"
             />
           </div>
@@ -189,7 +189,7 @@ export default function WorkExperienceForm({ data, onChange }: WorkExperienceFor
               type="text"
               value={currentWork.location}
               onChange={(e) => setCurrentWork({ ...currentWork, location: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
               placeholder="Jakarta, Indonesia"
             />
           </div>
@@ -202,7 +202,7 @@ export default function WorkExperienceForm({ data, onChange }: WorkExperienceFor
               type="month"
               value={currentWork.startDate}
               onChange={(e) => setCurrentWork({ ...currentWork, startDate: e.target.value })}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
             />
           </div>
 
@@ -215,7 +215,7 @@ export default function WorkExperienceForm({ data, onChange }: WorkExperienceFor
               value={currentWork.endDate}
               onChange={(e) => setCurrentWork({ ...currentWork, endDate: e.target.value })}
               disabled={currentWork.currentlyWorking}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 text-gray-900"
             />
           </div>
 
@@ -254,7 +254,7 @@ export default function WorkExperienceForm({ data, onChange }: WorkExperienceFor
                       value={resp}
                       onChange={(e) => updateResponsibility(index, e.target.value)}
                       rows={2}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
                       placeholder={`Tanggung jawab/pencapaian ${index + 1}`}
                     />
                   </div>
