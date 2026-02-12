@@ -9,6 +9,7 @@ import SkillsForm from './components/SkillsForm';
 import CVPreview from './components/CVPreview';
 import { CVData, PersonalData, Education, Certificate, WorkExperience, Skills } from './type';
 
+
 const initialPersonalData: PersonalData = {
   fullName: '',
   email: '',
