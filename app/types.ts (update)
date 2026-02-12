@@ -1,0 +1,24 @@
+export interface WorkExperience {
+    id: string;
+    company: string;
+    position: string;
+    startDate: Date;
+    endDate?: Date;
+    responsibilities: string[];
+}
+
+export interface WorkExperienceFormProps {
+    experiences: WorkExperience[];
+    onAddExperience: (experience: WorkExperience) => void;
+    onRemoveExperience: (id: string) => void;
+}
+
+export type ExperienceResponse = {
+    id: string;
+    data: WorkExperience;
+};
+
+export type ExperienceIndex = {
+    index: number;
+    experience: WorkExperience;
+};
