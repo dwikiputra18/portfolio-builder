@@ -7,6 +7,7 @@ import CertificateForm from './components/CertificateForm';
 import WorkExperienceForm from './components/WorkExperienceForm';
 import SkillsForm from './components/SkillsForm';
 import CVPreview from './components/CVPreview';
+import UploadPDF from './components/UploadPDF';
 import { CVData, PersonalData, Education, Certificate, WorkExperience, Skills } from './type';
 
 
@@ -36,6 +37,7 @@ export default function Home() {
   const [workExperience, setWorkExperience] = useState<WorkExperience[]>([]);
   const [skills, setSkills] = useState<Skills>(initialSkills);
   const [showPreview, setShowPreview] = useState(false);
+  const [showUpload, setShowUpload] = useState(false);
 
   const cvData: CVData = {
     personalData,
@@ -81,6 +83,16 @@ export default function Home() {
     setShowPreview(false);
   };
 
+  const handleDataLoaded = (data: CVData) => {
+    setPersonalData(data.personalData);
+    setEducation(data.education);
+    setCertificates(data.certificates);
+    setWorkExperience(data.workExperience);
+    setSkills(data.skills);
+    setShowUpload(false);
+    setCurrentStep(1); // Start from first step
+  };
+
   const CurrentStepComponent = steps[currentStep - 1]?.component;
   const currentStepData = stepDataMap[currentStep];
 
@@ -102,10 +114,22 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-800 mb-2">
             CV Builder ATS-Friendly
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 mb-4">
             Buat CV profesional yang mudah dibaca oleh sistem ATS
           </p>
+          <button
+            onClick={() => setShowUpload(!showUpload)}
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            {showUpload ? 'Tutup Upload' : 'Upload PDF Portfolio'}
+          </button>
         </div>
+
+        {showUpload && (
+          <div className="mb-6">
+            <UploadPDF onDataLoaded={handleDataLoaded} />
+          </div>
+        )}
 
         {/* Progress Steps */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
