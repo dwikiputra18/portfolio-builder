@@ -18,7 +18,8 @@ export async function POST(request: Request) {
     const buffer = Buffer.from(await file.arrayBuffer());
 
     // ✅ Dynamic require (AMAN untuk Turbopack)
-    const pdfParse = (await import('pdf-parse')).default;
+    const pdfParse = require('pdf-parse');
+ 
 
     const data = await pdfParse(buffer);
 
