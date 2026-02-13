@@ -1,34 +1,41 @@
 import { NextRequest, NextResponse } from 'next/server';
-import formidable from 'formidable';
-import fs from 'fs';
-const pdfTextExtract = require('pdf-text-extract');
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.js';
 
 export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
-    const form = formidable({ multiples: false });
+    const formData = await request.formData();
+    const file = formData.get('file') as File;
 
-    const [fields, files] = await form.parse(request as any);
-
-    const file = files.file?.[0];
-    if (!file || !file.filepath) {
+    if (!file) {
       return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
     }
 
-    // Parse PDF
-    const text = await new Promise<string>((resolve, reject) => {
-      pdfTextExtract(file.filepath, (error: any, text: string) => {
-        if (error) reject(error);
-        else resolve(text);
-      });
-    });
+    const buffer = await file.arrayBuffer();
+
+    // Set worker source for server-side
+    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+
+    const pdf = await pdfjsLib.getDocument({
+      data: new Uint8Array(buffer),
+    }).promise;
+
+    let fullText = '';
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const textContent = await page.getTextContent();
+
+      const pageText = textContent.items
+        .map((item: any) => item.str)
+        .join(' ');
+
+      fullText += pageText + '\n';
+    }
 
     // Simple parsing logic (this can be improved with better NLP)
-    const parsedData = parseCVText(text);
-
-    // Clean up temp file
-    fs.unlinkSync(file.filepath);
+    const parsedData = parseCVText(fullText);
 
     return NextResponse.json(parsedData);
   } catch (error) {
