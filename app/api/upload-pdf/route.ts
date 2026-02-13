@@ -1,7 +1,6 @@
 export const runtime = 'nodejs';
 
 import { NextResponse } from 'next/server';
-import pdf from 'pdf-parse';
 
 export async function POST(request: Request) {
   try {
@@ -14,11 +13,14 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-    
 
+    // ✅ Convert file ke Buffer
     const buffer = Buffer.from(await file.arrayBuffer());
 
-    const data = await pdf(buffer);
+    // ✅ Dynamic require (AMAN untuk Turbopack)
+    const pdfParse = (await import('pdf-parse')).default;
+
+    const data = await pdfParse(buffer);
 
     return NextResponse.json({
       text: data.text,
