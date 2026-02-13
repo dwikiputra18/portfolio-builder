@@ -14,6 +14,7 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+    
 
     const buffer = Buffer.from(await file.arrayBuffer());
 
