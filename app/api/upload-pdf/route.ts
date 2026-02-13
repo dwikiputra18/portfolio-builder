@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
     }
 
+    
     const buffer = await file.arrayBuffer();
 
     // Set worker source for server-side
