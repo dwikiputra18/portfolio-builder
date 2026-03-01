@@ -1,0 +1,17 @@
+John Doe
+john@example.com
+123-456-7890
+
+Professional Summary
+Experienced developer with 5 years of experience.
+
+Education
+Bachelor of Computer Science
+University of Example
+2015-2019
+
+Work Experience
+Software Developer
+Tech Company
+2020-Present
+Developed web applications using React and Node.js
